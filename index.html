@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeStore SPA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header"></header>
+
+    <main>
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <section id="products-page" class="page">
+            <div class="filter-container">
+                <input type="search" id="search-input" placeholder="Pesquisar por nome...">
+            </div>
+            <div id="product-list" class="product-grid"></div>
+        </section>
+
+        <section id="favorites-page" class="page" style="display: none;">
+            <h2>Meus Favoritos</h2>
+            <div id="favorite-list" class="product-grid"></div>
+        </section>
+    </main>
+
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
