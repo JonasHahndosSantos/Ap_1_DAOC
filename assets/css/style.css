@@ -1,4 +1,3 @@
-/* Reset Básico e Estilos Globais */
 :root {
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
@@ -28,7 +27,6 @@ main {
     margin: 0 auto;
 }
 
-/* Header e Navegação */
 .main-header {
     background-color: var(--secondary-color);
     color: white;
@@ -64,7 +62,6 @@ main {
     background-color: var(--primary-color);
 }
 
-/* Container de Filtro */
 .filter-container {
     margin-bottom: 2rem;
     text-align: center;
@@ -79,14 +76,12 @@ main {
     font-size: 1rem;
 }
 
-/* Grid de Produtos */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* Card de Produto */
 .product-card {
     background-color: var(--card-background);
     border-radius: 10px;
@@ -189,7 +184,6 @@ main {
     100% { transform: rotate(360deg); }
 }
 
-/* Layout Responsivo */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;

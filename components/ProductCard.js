@@ -1,4 +1,3 @@
-// ProductCard.js
 import { isFavorite, toggleFavorite } from '../assets/js/services/favoritesManager.js';
 
 export const createProductCard = (product) => {

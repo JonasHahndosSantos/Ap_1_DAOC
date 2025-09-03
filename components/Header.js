@@ -1,4 +1,3 @@
-// Header.js
 export const renderHeader = (container) => {
     container.className = 'main-header';
     container.innerHTML = `

@@ -1,11 +1,8 @@
-// assets/js/main.js
 import { $ } from './utils/dom.js';
-// O import de 'api.js' foi REMOVIDO
 import { loadFavorites } from './services/favoritesManager.js';
 import { renderHeader } from '../../components/Header.js';
 import { createProductCard } from '../../components/ProductCard.js';
 
-// --- LÓGICA DA API MOVIDA PARA CÁ ---
 const API_URL = 'https://fakestoreapi.com/products';
 
 const fetchProducts = async () => {
@@ -18,15 +15,11 @@ const fetchProducts = async () => {
         return products;
     } catch (error) {
         console.error("Falha ao buscar produtos:", error);
-        // Exibe uma mensagem de erro na tela para o usuário
         $('#product-list').innerHTML = '<p class="error-message">Não foi possível carregar os produtos. Tente novamente mais tarde.</p>';
         return [];
     }
 };
-// --- FIM DA LÓGICA DA API ---
 
-
-// Seletores do DOM
 const mainHeader = $('#main-header');
 const productListContainer = $('#product-list');
 const favoriteListContainer = $('#favorite-list');
@@ -37,7 +30,6 @@ const searchInput = $('#search-input');
 
 let allProducts = [];
 
-// Função para renderizar produtos
 const renderProducts = (products, container) => {
     container.innerHTML = '';
     if (products.length === 0 && container === favoriteListContainer) {
@@ -49,14 +41,12 @@ const renderProducts = (products, container) => {
     }
 };
 
-// Função para renderizar a página de favoritos
 const renderFavorites = () => {
     const favoriteIds = loadFavorites();
     const favoriteProducts = allProducts.filter(product => favoriteIds.includes(product.id));
     renderProducts(favoriteProducts, favoriteListContainer);
 };
 
-// Gerenciador de Navegação da SPA
 const navigate = (hash) => {
     document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
@@ -81,14 +71,12 @@ const navigate = (hash) => {
     }
 };
 
-// Função de inicialização
 const init = async () => {
     renderHeader(mainHeader);
     loader.style.display = 'flex';
 
-    allProducts = await fetchProducts(); // Agora chama a função local
+    allProducts = await fetchProducts(); 
     
-    // Só renderiza e esconde o loader se os produtos forem carregados
     if (allProducts.length > 0) {
         renderProducts(allProducts, productListContainer);
     }
